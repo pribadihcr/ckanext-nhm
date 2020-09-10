@@ -13,6 +13,7 @@ import ckanext.nhm.logic.schema as nhm_schema
 import os
 import re
 import requests
+import json
 from beaker.cache import cache_managers
 from ckanext.ckanpackager.interfaces import ICkanPackager
 from ckanext.contact.interfaces import IContact
@@ -365,26 +366,7 @@ class NHMPlugin(SingletonPlugin, toolkit.DefaultDatasetForm):
         metadata_dict[u'resource_type'] = pkg_dict.get(u'dataset_category', None)
         if isinstance(metadata_dict[u'resource_type'], list) and metadata_dict[u'resource_type']:
             metadata_dict[u'resource_type'] = metadata_dict[u'resource_type'][0]
-        contributors = pkg_dict.get(u'contributors', None)
-        if contributors:
-            contributors = contributors.split(u'\n')
-            found_contributors = []
-            # iterate over the non-blank contributors in the list
-            for contributor in filter(None, map(lambda c: c.strip(), contributors)):
-                contributor = contributor.encode(u'unicode-escape')
-                match = re.search(r'(.*?)\s?\((.*)\)', contributor)
-                if match:
-                    found_contributors.append({
-                        u'contributorName': match.group(1),
-                        u'affiliation': match.group(2),
-                    })
-                else:
-                    found_contributors.append({
-                        u'contributorName': contributor
-                    })
-            if found_contributors:
-                metadata_dict[u'contributors'] = found_contributors
-
+        # contributors now handled in ckanext-dataset-contributors
         affiliation = pkg_dict.get(u'affiliation', None)
         if affiliation:
             metadata_dict[u'affiliation'] = affiliation.encode(u'unicode-escape')
@@ -396,15 +378,7 @@ class NHMPlugin(SingletonPlugin, toolkit.DefaultDatasetForm):
         '''
         ..seealso:: ckanext.doi.interfaces.IDoi.metadata_to_xml
         '''
-        if u'contributors' in metadata:
-            xml_dict[u'resource'][u'contributors'] = {
-                u'contributor': [],
-                }
-            for contributor in metadata[u'contributors']:
-                contributor[u'@contributorType'] = u'Researcher'
-                xml_dict[u'resource'][u'contributors'][u'contributor'].append(
-                    contributor)
-
+        # contributors now handled in ckanext-dataset-contributors
         # FIXME - Datacite 3.1 isn't accepting affiliation in the creator field
         # if 'affiliation' in metadata:
         #     xml_dict['resource']['creators']['creator'][0]['affiliation'] = metadata[

@@ -57,12 +57,11 @@
                 </tr>
             {%  endif %}
 
-            {% if contributors %}
-                <tr>
-                    <th scope="row" class="dataset-label">{{ _("Contributors") }}</th>
-                    <td class="dataset-details">{{ contributors }}</td>
-                </tr>
-            {%  endif %}
+            {% block contributors_row %}
+                {% if contributors %}
+                    {{ super() }}
+                {%  endif %}
+            {% endblock %}
 
             {% if temporal_extent %}
                 <tr>

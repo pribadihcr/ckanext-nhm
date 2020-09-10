@@ -11,6 +11,7 @@ __version__ = u'1.0.0-alpha'
 with open(u'README.md', u'r') as f:
     __long_description__ = f.read()
 
+nhmgit = 'git+https://github.com/NaturalHistoryMuseum/'
 
 dependencies = {
     'ckanext-spatial': 'git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial',
@@ -35,36 +36,8 @@ dependencies = {
     'ckanext-versioned-tiledmap': nhmgit + 'ckanext-versioned-tiledmap.git#egg=ckanext_versioned_tiledmap',
     'ckanext-query-dois': nhmgit + 'ckanext-query-dois.git#egg=ckanext_query_dois',
     'ckanext-iiif': nhmgit + 'ckanext-iiif.git#egg=ckanext_iiif',
+    'ckanext-dataset-contributors': nhmgit + 'ckanext-dataset-contributors.git#egg=ckanext_dataset_contributors',
 }
-
-
-dependencies = {
-    u'ckanext-spatial': u'git+https://github.com/ckan/ckanext-spatial.git#egg=ckanext-spatial',
-    u'ckanext-viewhelpers': u'git+https://github.com/ckan/ckanext-viewhelpers.git#egg=ckanext-viewhelpers',
-    u'ckanext-dcat': u'git+https://github.com/ckan/ckanext-dcat.git@v1.0.0#egg=ckanext-dcat',
-    u'ckanext-pdfview': u'git+https://github.com/ckan/ckanext-pdfview.git#egg=ckanext-pdfview',
-}
-nhm_extensions = [
-    u'ckanext-ckanpackager',
-    u'ckanext-contact',
-    u'ckanext-doi',
-    u'ckanext-gallery',
-    u'ckanext-gbif',
-    u'ckanext-graph',
-    u'ckanext-iiif',
-    u'ckanext-ldap',
-    u'ckanext-list',
-    u'ckanext-query-dois',
-    u'ckanext-sketchfab',
-    u'ckanext-statistics',
-    u'ckanext-status',
-    u'ckanext-twitter',
-    u'ckanext-userdatasets',
-    u'ckanext-versioned-datastore',
-    u'ckanext-versioned-tiledmap',
-    u'ckanext-video',
-]
-dependencies.update({extension: nhm(extension) for extension in nhm_extensions})
 
 setup(
     name=u'ckanext-nhm',
