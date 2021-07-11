@@ -1,0 +1,2 @@
+recursive-include ckanext/nhm *.html *.json *.js *.less *.css *.mo *.png *.xsd *.txt *.jpg
+
