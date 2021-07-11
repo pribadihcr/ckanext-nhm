@@ -1,2 +1,2 @@
-recursive-include ckanext/dia_theme *.html *.json *.js *.less *.css *.mo *.png *.xsd *.txt *.jpg
+recursive-include ckanext/nhm *.html *.json *.js *.less *.css *.mo *.png *.xsd *.txt *.jpg
 
