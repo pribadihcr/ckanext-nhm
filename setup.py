@@ -52,7 +52,7 @@ setup(
     license='GNU GPLv3',
     packages=find_packages(exclude=['tests']),
     namespace_packages=['ckanext', 'ckanext.nhm'],
-    package_data={b'multigtfs': ['src/tdwg_dwcterms.xsd']},
+    package_data={b'ckanext-nhm': ['src/tdwg_dwcterms.xsd']},
     include_package_data=True,
     zip_safe=False,
     install_requires=[
