@@ -1,5 +1,5 @@
 main-js:
-  output: ckanext-nhm/%(version)s_main.js
+  output: ckanext-nhm/main.js
   filters: rjsmin
   extra:
     preload:
@@ -8,7 +8,7 @@ main-js:
     - scripts/tweaks.js
 
 main-css:
-  output: ckanext-nhm/%(version)s_main.css
+  output: ckanext-nhm/main.css
   filters: less
   config:
     LESS_BIN: ../../../../../node_modules/less/bin/lessc
@@ -20,13 +20,13 @@ main-css:
       - ckanext-nhm/font-awesome-css
 
 font-awesome-css:
-  output: ckanext-nhm/%(version)s_fa.css
+  output: ckanext-nhm/fa.css
   filters: cssrewrite
   contents:
     - vendor/fontawesome-free-5.14.0-web/css/all.css
 
 view-controls:
-  output: ckanext-nhm/%(version)s_view-controls.css
+  output: ckanext-nhm/view-controls.css
   filters: less
   config:
     LESS_BIN: ../../../../../node_modules/less/bin/lessc
@@ -34,13 +34,13 @@ view-controls:
     - less/view-controls.less
 
 slickgrid-css:
-  output: ckanext-nhm/%(version)s_slickgrid.css
+  output: ckanext-nhm/slickgrid.css
   contents:
     # TODO: 2.9 - switch to less
     - css/slickgrid.css
 
 slickgrid-js:
-  output: ckanext-nhm/%(version)s_slickgrid.js
+  output: ckanext-nhm/slickgrid.js
   filters: rjsmin
   extra:
     preload:
@@ -51,12 +51,12 @@ slickgrid-js:
 
 # TODO: 2.9 - switch to less
 map:
-  output: ckanext-nhm/%(version)s_map.css
+  output: ckanext-nhm/map.css
   contents:
     - css/map.css
 
 resource-view-field-filters:
-  output: ckanext-nhm/%(version)s_resource-view-field-filters.js
+  output: ckanext-nhm/resource-view-field-filters.js
   filters: rjsmin
   extra:
     preload:
@@ -65,7 +65,7 @@ resource-view-field-filters:
     - scripts/modules/resource-view-field-filters.js
 
 resource-view-filter-options:
-  output: ckanext-nhm/%(version)s_resource-view-filter-options.js
+  output: ckanext-nhm/resource-view-filter-options.js
   filters: rjsmin
   extra:
     preload:
@@ -74,7 +74,7 @@ resource-view-filter-options:
     - scripts/modules/resource-view-filter-options.js
 
 grid-view-fullscreen:
-  output: ckanext-nhm/%(version)s_grid-view-fullscreen.js
+  output: ckanext-nhm/grid-view-fullscreen.js
   filters: rjsmin
   extra:
     preload:
@@ -83,7 +83,7 @@ grid-view-fullscreen:
     - scripts/modules/grid-view-fullscreen.js
 
 iframe-resize:
-  output: ckanext-nhm/%(version)s_iframe-resize.js
+  output: ckanext-nhm/iframe-resize.js
   filters: rjsmin
   extra:
     preload:
@@ -92,7 +92,7 @@ iframe-resize:
     - scripts/modules/iframe-resize.js
 
 toggle-empty-rows:
-  output: ckanext-nhm/%(version)s_toggle-empty-rows.js
+  output: ckanext-nhm/toggle-empty-rows.js
   filters: rjsmin
   extra:
     preload:
@@ -101,7 +101,7 @@ toggle-empty-rows:
     - scripts/modules/toggle-empty-rows.js
 
 back-button:
-  output: ckanext-nhm/%(version)s_back-button.js
+  output: ckanext-nhm/back-button.js
   filters: rjsmin
   extra:
     preload:
@@ -110,7 +110,7 @@ back-button:
     - scripts/modules/back-button.js
 
 toggle-select:
-  output: ckanext-nhm/%(version)s_toggle-select.js
+  output: ckanext-nhm/toggle-select.js
   filters: rjsmin
   extra:
     preload:
@@ -119,7 +119,7 @@ toggle-select:
     - scripts/modules/toggle-select.js
 
 social:
-  output: ckanext-nhm/%(version)s_social.js
+  output: ckanext-nhm/social.js
   filters: rjsmin
   extra:
     preload:
@@ -128,14 +128,14 @@ social:
     - scripts/modules/social.js
 
 mam:
-  output: ckanext-nhm/%(version)s_mam.js
+  output: ckanext-nhm/mam.js
   filters: rjsmin
   contents:
     - scripts/mam.js
     - scripts/vendor/mustache/0.5.0-dev/mustache.js
 
 expand-authors:
-  output: ckanext-nhm/%(version)s_expand-authors.js
+  output: ckanext-nhm/expand-authors.js
   filters: rjsmin
   extra:
     preload:
@@ -144,19 +144,19 @@ expand-authors:
     - scripts/modules/expand-authors.js
 
 external-links:
-  output: ckanext-nhm/%(version)s_external-links.js
+  output: ckanext-nhm/external-links.js
   filters: rjsmin
   contents:
     - scripts/external-links.js
 
 record-citation:
-  output: ckanext-nhm/%(version)s_record-citation.js
+  output: ckanext-nhm/record-citation.js
   filters: rjsmin
   contents:
     - scripts/record-citation.js
 
 search-css:
-  output: ckanext-nhm/%(version)s_multisearch.css
+  output: ckanext-nhm/multisearch.css
   filters: less
   config:
     LESS_BIN: ../../../../../node_modules/less/bin/lessc
@@ -164,7 +164,7 @@ search-css:
     - less/multisearch.less
 
 search-js:
-  output: ckanext-nhm/%(version)s_search.js
+  output: ckanext-nhm/search.js
   filters: rjsmin
   contents:
     - scripts/apps/search/dist/search.js
@@ -174,7 +174,7 @@ search-js:
     - scripts/apps/search/dist/3.search.js
 
 home-search:
-  output: ckanext-nhm/%(version)s_home-search.js
+  output: ckanext-nhm/home-search.js
   filters: rjsmin
   extra:
     preload:
@@ -183,7 +183,7 @@ home-search:
     - scripts/home-search.js
 
 bbcm-css:
-  output: ckanext-nhm/%(version)s_bbcm.css
+  output: ckanext-nhm/bbcm.css
   filters: less
   config:
     LESS_BIN: ../../../../../node_modules/less/bin/lessc
@@ -191,14 +191,14 @@ bbcm-css:
     - less/bbcm.less
 
 bbcm-js:
-  output: ckanext-nhm/%(version)s_bbcm.js
+  output: ckanext-nhm/bbcm.js
   filters: rjsmin
   contents:
     - scripts/vendor/leaflet.utfgrid.js
     - scripts/bbcm.js
 
 vfactor-iiif-css:
-  output: ckanext-nhm/%(version)s_vfactor-iiif.css
+  output: ckanext-nhm/vfactor-iiif.css
   filters: less
   config:
     LESS_BIN: ../../../../../node_modules/less/bin/lessc
@@ -206,18 +206,18 @@ vfactor-iiif-css:
     - less/vfactor-iiif.less
 
 vfactor-iiif-js:
-  output: ckanext-nhm/%(version)s_vfactor-iiif.js
+  output: ckanext-nhm/vfactor-iiif.js
   filters: rjsmin
   contents:
     - scripts/apps/vfactor-iiif/dist/vfactor-iiif.js
 
 record-map-css:
-  output: ckanext-nhm/%(version)s_record_map.css
+  output: ckanext-nhm/record_map.css
   contents:
     - vendor/leaflet/leaflet.css
 
 record-map-js:
-  output: ckanext-nhm/%(version)s_record_map.js
+  output: ckanext-nhm/record_map.js
   filters: rjsmin
   extra:
     preload:
@@ -228,7 +228,7 @@ record-map-js:
 
 # this bundle just loads the ckanext_stats/stats bundle but adds some extra flot plugins we need
 stats-extra:
-  output: ckanext-nhm/%(version)s_stats_extra.js
+  output: ckanext-nhm/stats_extra.js
   filters: rjsmin
   extra:
     preload:
